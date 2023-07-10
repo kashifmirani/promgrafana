@@ -1,8 +1,7 @@
-# grafana-pvc.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: grafana-data
+  name: grafana-storage
   namespace: monitoring
 spec:
   accessModes:
@@ -10,4 +9,4 @@ spec:
   resources:
     requests:
       storage: 2Gi
-  volumeName: grafana-pv
+  storageClassName: grafana-data
