@@ -16,14 +16,16 @@ data:
       - job_name: 'kubernetes-pods'
         scrape_interval: 30s
         kubernetes_sd_configs:
-          - role: pod
+          - role: endpoints
         relabel_configs:
-          - source_labels: [__meta_kubernetes_pod_label_app]
+          - source_labels: [__meta_kubernetes_namespace]
             action: keep
       - job_name: 'kubernetes-namespaces'
         scrape_interval: 30s
         kubernetes_sd_configs:
-          - role: endpoints
+          - role: service
         relabel_configs:
-          - action: labelmap
-            regex: __meta_kubernetes_namespace_(.+)
+          - source_labels: [__meta_kubernetes_service_label_namespace]
+            regex: (.*)
+            target_label: kubernetes_namespace
+            replacement: $1
