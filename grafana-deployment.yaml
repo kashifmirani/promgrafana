@@ -22,8 +22,8 @@ spec:
             - name: grafana-storage
               mountPath: /var/lib/grafana
           securityContext:
-            runAsUser: 472  # Update this value to match the UID of the 'grafana' user within the container
-            fsGroup: 472    # Update this value to match the GID of the 'grafana' group within the container
+            runAsUser: 0
+            fsGroup: 0
       volumes:
         - name: grafana-storage
           persistentVolumeClaim:
