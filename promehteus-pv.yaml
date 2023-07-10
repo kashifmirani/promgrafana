@@ -3,10 +3,10 @@ kind: PersistentVolume
 metadata:
   name: prometheus-pv
 spec:
-  storageClassName: <your-storage-class-name>
+  storageClassName: prometheus-data
   capacity:
-    storage: 10Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /path/to/host/path
+    path: /home/vagrant/prometheus/
