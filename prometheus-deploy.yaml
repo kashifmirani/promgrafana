@@ -28,6 +28,9 @@ spec:
             - name: prometheus-config
               mountPath: /etc/prometheus/prometheus.yml
               subPath: prometheus.yml
+          securityContext:
+            runAsUser: 0
+            fsGroup: 0  
       volumes:
         - name: prometheus-data
           persistentVolumeClaim:
