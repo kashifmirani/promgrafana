@@ -1,4 +1,3 @@
-# grafana-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,6 +21,9 @@ spec:
           volumeMounts:
             - name: grafana-storage
               mountPath: /var/lib/grafana
+          securityContext:
+            runAsUser: 472  # Update this value to match the UID of the 'grafana' user within the container
+            fsGroup: 472    # Update this value to match the GID of the 'grafana' group within the container
       volumes:
         - name: grafana-storage
           persistentVolumeClaim:
