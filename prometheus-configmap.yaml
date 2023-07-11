@@ -91,14 +91,12 @@ data:
       - job_name: 'kube-state-metrics'
         static_configs:
           - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
-          - job_name: kubernetes-nodes-cadvisor
-    scrape_interval: 10s
-    scrape_timeout: 10s
-    scheme: https  # remove if you want to scrape metrics on insecure port
-    tls_config:
-      ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-    bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
-    kubernetes_sd_configs:
+      - job_name: kubernetes-nodes-cadvisor
+        scheme: https  # remove if you want to scrape metrics on insecure port
+        tls_config:
+        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+        kubernetes_sd_configs:
       - role: node
     relabel_configs:
       - action: labelmap
