@@ -9,4 +9,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /home/vagrant/prometheus/
+    path: please change this path i.e /home/kashif/prometheus/
