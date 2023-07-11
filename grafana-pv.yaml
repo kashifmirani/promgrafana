@@ -9,4 +9,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: please change this path i.e /home/kashif/grafana
+    path: /home/kashif/grafana
