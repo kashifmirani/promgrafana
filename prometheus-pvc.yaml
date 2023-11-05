@@ -9,4 +9,4 @@ spec:
   storageClassName: prometheus-data
   resources:
     requests:
-      storage: 5Gi
+      storage: 18Gi
