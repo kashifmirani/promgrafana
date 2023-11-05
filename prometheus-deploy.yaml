@@ -23,7 +23,7 @@ spec:
           ports:
             - containerPort: 9090
           volumeMounts:
-            - name: prometheus-data
+            - name: prometheus-data1
               mountPath: /data
             - name: prometheus-config
               mountPath: /etc/prometheus/prometheus.yml
@@ -32,9 +32,9 @@ spec:
             runAsUser: 0
             fsGroup: 0  
       volumes:
-        - name: prometheus-data
+        - name: prometheus-data1
           persistentVolumeClaim:
-            claimName: prometheus-data
+            claimName: prometheus-data1
         - name: prometheus-config
           configMap:
             name: prometheus-config
