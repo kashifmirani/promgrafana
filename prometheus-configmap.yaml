@@ -94,7 +94,11 @@ data:
       - job_name: "Cluster_Exporter"
         static_configs:
           - targets:
-            - "localhost:9100","10.7.0.2:9100","10.7.0.1:9100","10.7.0.5:9100","10.7.0.4:9100"
+            - "localhost:9100"
+            - "10.7.0.2:9100"
+            - "10.7.0.1:9100"
+            - "10.7.0.5:9100"
+            - "10.7.0.4:9100"
       - job_name: 'kubernetes-cadvisor'
         scheme: https
         tls_config:
