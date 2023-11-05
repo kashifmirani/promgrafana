@@ -5,8 +5,8 @@ metadata:
 spec:
   storageClassName: prometheus-data
   capacity:
-    storage: 5Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /home/pswadmin/prometheus/
+    path: /home/data/
