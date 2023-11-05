@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: prometheus-pv1
 spec:
-  storageClassName: prometheus-data
+  storageClassName: prometheus-data1
   capacity:
     storage: 20Gi
   accessModes:
